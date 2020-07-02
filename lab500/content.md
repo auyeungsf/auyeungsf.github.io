@@ -154,10 +154,10 @@ Since Oracle has several regions in the world to host the databases and your adm
 	- By default the (root) compartment is selected
 	- Select the Compartment you have access to
 	- Correct compartment can be found on your hand-out
-	- Compartment name in PTS workshops has the format `APAC-Workshop-01`
+	- Compartment name in PTS workshops has the format `root:Training:APAC-Workshop-01`
 
-![](./images/05-Compartment.png)
- 
+![](images/image-20200702150625933.png)
+
 ### Create a new Autonomous Transaction Processing database ###
 
 By clicking on the blue 'Create Autonomous Database' button, the wizard will display that helps you with the creation. Enter the following values for your new database:
@@ -406,12 +406,13 @@ During the gathering of the other parameters, your ADB environment should have b
 - **ADB_TARGET**
 	- Target type of your Autonomous database.
 	- Values can be ATP or ADB
-	 
+	
+
 **First parameter** requires the name of your created ADB environment. 
 - Navigate to the ADB Console and find the name of your database. 
 - This should be the 'Database Name' value and not the 'Display Name' value
 - Enter the Database Name value into the configuration file
- 
+
 **Second parameter** is the password you have entered while creating the Autonomous environment. 
 - If you have used the suggested password, it would be OraclePTS#2019. 
 	- If you have chosen another password, you now need to remember it
