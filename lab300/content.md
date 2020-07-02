@@ -72,7 +72,7 @@ SQL> <copy>create pluggable database PDB19C02 admin user admin identified by Wel
 Pluggable database created.
 ````
 
-In the above example we choose the location for the filenames by using the file_name_convert clause. Another option would have been setting the `PDB_FILE_NAME_CONVERT` init.ora parameter or have Oracle sort it out using Oracle Managed Files.
+In the above example we choose the location for the filenames by using the `file_name_convert` clause. Another option would have been setting the `PDB_FILE_NAME_CONVERT` init.ora parameter or have Oracle sort it out using Oracle Managed Files.
 
 The files for this PDB have been created in `/u01/oradata/DB19C/PDB19C02` as a result of our create pluggable database command. After creating the new PDB, we need to start it so it can be used as a target for our migration:
 
@@ -102,9 +102,7 @@ SQL> <copy>grant read, write on directory homedir to system;</copy>
 Grant succeeded.
 ````
 ````
-SQL> <copy>create public database link SOURCEDB 
-     connect to system identified by Welcome_123 
-     using '//localhost:1521/DB122';</copy>
+SQL> <copy>create public database link SOURCEDB connect to system identified by Welcome_123 using '//localhost:1521/DB122';</copy>
 
 Database link created.
 ````
@@ -250,9 +248,7 @@ The Oracle base remains unchanged with value /u01/app/oracle
 We can now start the actual import process. 
 
 ````
-$ <copy>impdp system/Welcome_123@//localhost:1521/PDB19C02 network_link=sourcedb \
-        full=y transportable=always metrics=y exclude=statistics logfile=homedir:db122ToPdb.log \
-        logtime=all transport_datafiles='/u01/oradata/DB19C/PDB19C02/users01.dbf'</copy>
+$ <copy>impdp system/Welcome_123@//localhost:1521/PDB19C02 network_link=sourcedb full=y transportable=always metrics=y exclude=statistics logfile=homedir:db122ToPdb.log logtime=all transport_datafiles='/u01/oradata/DB19C/PDB19C02/users01.dbf'</copy>
 ````
 
 A similar output should be visible:

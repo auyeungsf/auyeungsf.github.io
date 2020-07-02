@@ -40,13 +40,13 @@ Processing Database instance "DB19C": log file /u01/app/oracle/product/19.3.0/db
 
 ## Download and install the required tools ##
 
-The script that allows you easy migration to ADB can be downloaded from MyOracle Support through note **2463574.1**. In the Workshop environment we have already downloaded the tool for you in the `/source` directory.
+The script that allows you easy migration to ADB can be downloaded from MyOracle Support through note **2463574.1**. In the Workshop environment we have already downloaded the tool for you in the `/home/oracle/Downloads` directory.
 
 ### Install the MV2ADB script ###
 The MV2ADB tool is an .rpm package and needs to be installed as the root user.
 
 ````
-[oracle@ws ~]$ <copy>sudo yum -y localinstall /source/mv2adb*.rpm</copy>
+[oracle@ws ~]$ <copy>sudo yum -y localinstall /home/oracle/Downloads/mv2adb*.rpm</copy>
 
 Loaded plugins: langpacks, ulninfo
 Examining /source/mv2adb-2.0.1-80.noarch.rpm: mv2adb-2.0.1-80.noarch
@@ -145,7 +145,7 @@ In this menu, you can see the databases currently running and you can create new
 Since Oracle has several regions in the world to host the databases and your administrator might have restricted the locations where you can create those databases, make sure you have selected the correct values for the following items:
 
 - Datacenter Region
-	- Like US West (Phoenix) or Germany Central (Frankfurt)
+	- Like South Korea North (Chuncheon)
 	- Correct region can be found on your hand-out
 
 ![](./images/04-Region.png)
@@ -154,7 +154,7 @@ Since Oracle has several regions in the world to host the databases and your adm
 	- By default the (root) compartment is selected
 	- Select the Compartment you have access to
 	- Correct compartment can be found on your hand-out
-	- Compartment name in PTS workshops has the format `ADB-COMPARTMENT-<city>-<date>`
+	- Compartment name in PTS workshops has the format `APAC-Workshop-01`
 
 ![](./images/05-Compartment.png)
  
@@ -231,7 +231,7 @@ $ <copy>sudo -s</copy>
 
 Create the new configuration file by executing the following command:
 ````
-# <copy>vi /opt/mv2adb/conf/atp.mv2adb.cfg</copy>
+# <copy>vi /opt/mv2adb/conf/ATP.mv2adb.conf</copy>
 ````
 
 Cut-and-paste the following default setup file in the new config file:
@@ -662,7 +662,7 @@ Enter the following details:
 After connecting, a new SQL Window will be displayed. Here you can execute queries on the ATP environment.
 
 ````
-<copy>select count(*) from parkingfine.parking_violations</copy>
+<copy>select count(*) from parkingfine.parking_citations;</copy>
 ````
 
 After clicking on the green arrow in the SQL Window, the query will be executed. The result of the query should be similar to this:

@@ -141,9 +141,7 @@ Version 19.3.0.0.0
 After connecting as sysdba to the target database, we can plug in the PDB. As part of the plug-in process, we can also move (or copy) the datafiles if needed. In our example, we want the database files to move from the old 18c datafiles location to the new 19c datafile location:
 
 ````
-SQL> <copy>create pluggable database PDB18C01 using '/u01/PDB18C01.xml'
-     move
-     file_name_convert = ('/DB18C/','/DB19C/');</copy>
+SQL> <copy>create pluggable database PDB18C01 using '/u01/PDB18C01.xml' move file_name_convert = ('/DB18C/','/DB19C/');</copy>
 
 Pluggable database created.
 ````
@@ -153,8 +151,7 @@ The `move` clause means that all relevant files should be moved to the new locat
 Check that our datafiles are stored in the 19c datafile location:
 
 ````
-SQL> <copy>select name from v$datafile
-     where name like '%18C01%';</copy>
+SQL> <copy>select name from v$datafile where name like '%18C01%';</copy>
 
 NAME
 -------------------------------------------
@@ -188,10 +185,7 @@ Exit SQL*Plus and upgrade the PDB using `catctl.pl`:
 SQL> <copy>exit</copy>
 ````
 ````
-$ <copy>$ORACLE_HOME/perl/bin/perl $ORACLE_HOME/rdbms/admin/catctl.pl \
-  -d $ORACLE_HOME/rdbms/admin \
-  -c 'PDB18C01' \
-  -l $ORACLE_BASE catupgrd.sql</copy>
+$ <copy>$ORACLE_HOME/perl/bin/perl $ORACLE_HOME/rdbms/admin/catctl.pl -d $ORACLE_HOME/rdbms/admin -c 'PDB18C01' -l $ORACLE_BASE catupgrd.sql</copy>
 ````
 
 A similar output should be visible:

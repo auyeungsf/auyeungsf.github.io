@@ -16,7 +16,7 @@ The following is intended to outline our general product direction. It is intend
 
 Before we can upgrade to Oracle 19c, we need to have the Oracle software installed. Outside of this training environment, you should download production software base release from [https://eDelivery.oracle.com](https://eDelivery.oracle.com "eDelivery.oracle.com"). In a production environment, please also download the patches required and apply them before you create or upgrade any instances. Patches to upgrade the base 19c version (19.3.0) can be downloaded from [https://support.oracle.com](https://support.oracle.com).
 
-In this workshop, we have already downloaded the software for you. You need to adhere to the Oracle license restrictions when using this software. For training purposes when using this Hands-On Lab, the Oracle Technology Network license will apply. All software required is available in the `/source` directory in your image.
+In this workshop, we have already downloaded the software for you. You need to adhere to the Oracle license restrictions when using this software. For training purposes when using this Hands-On Lab, the Oracle Technology Network license will apply. All software required is available in the `/home/oracle/Downloads` directory in your image.
 
 ### Locate 19c software and unzip in correct location ###
 
@@ -34,7 +34,7 @@ We can now use this new location to unzip our software
 $ <copy>cd /u01/app/oracle/product/19.0.0/dbhome_193</copy>
 ````
 ````
-$ <copy>unzip /source/db_home_193_V982063.zip</copy>
+$ <copy>unzip /home/oracle/Downloads/db_home_193_V982063.zip</copy>
 
 ...
   javavm/admin/classes.bin -> ../../javavm/jdk/jdk8/admin/classes.bin
@@ -55,7 +55,7 @@ We will not install any patches during this workshop so we can continue to prepa
 An easy way to make sure all system parameters are correct in a Linux environment is to use the preinstall rpm package. For non-Linux environments, please check the manual for the appropriate environment values. We have already downloaded the preinstall rpm in the environment so you can simply install it.
 
 ````
-$ <copy>sudo yum -y localinstall /source/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm</copy>
+$ <copy>sudo yum -y localinstall /home/oracle/Downloads/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm</copy>
 
 Loaded plugins: langpacks, ulninfo
 Examining /source/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm: oracle-database-preinstall-19c-1.0-1.el7.x86_64
