@@ -348,7 +348,7 @@ If the OCI Command Line Interface (OCI CLI) is installed on the MV2ADB server, y
 	- In the previous section you pre-created a bucket with a unique name.
 - **OCI_ID**
 	- Your username in OCI
-	- Example: ADB-<city>-<date>
+	- Example: apac-student2
 - **OCI_PASSWORD**
 	- This is NOT the console password for your user !
 	- The Swift interface needs a so-called Authentication Token
