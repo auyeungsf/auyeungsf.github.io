@@ -148,15 +148,17 @@ Since Oracle has several regions in the world to host the databases and your adm
 	- Like South Korea North (Chuncheon)
 	- Correct region can be found on your hand-out
 
-![](./images/04-Region.png)
+![](images/image-20200729170343358.png)
+
+
 
 - Compartment
 	- By default the (root) compartment is selected
 	- Select the Compartment you have access to
 	- Correct compartment can be found on your hand-out
-	- Compartment name in PTS workshops has the format `root:Training:APAC-Workshop-01`
+	- Compartment name in PTS workshops has the format `root:Training:APAC-Workshop-02`
 
-![](images/image-20200702150625933.png)
+![](images/image-20200729165655244.png)
 
 ### Create a new Autonomous Transaction Processing database ###
 
